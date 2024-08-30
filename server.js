@@ -1,13 +1,13 @@
-var express = require('express');
-var app = express();
-var server = require('http').Server(app);
-var bodyParser = require('body-parser');
+const express = require('express')
+const path = require('path')
+const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}) );
+const appName = 'TesteB3'
 
-app.use( express.static(__dirname + '/client' ) );
+app.use(express.static(__dirname + `/dist/${appName}`))
 
-var listener = server.listen(process.env.PORT || 5000, function(){
-    console.log('Listening on port ' + listener.address().port); //Listening on port 5000
+app.get('/*', function (req, res){
+      res.sendFile(path.join(__dirname + `/dist/${appName}/index.html`))
 });
+
+app.listen(process.env.PORT || 8080)
