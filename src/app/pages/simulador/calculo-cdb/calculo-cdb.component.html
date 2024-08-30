@@ -1,0 +1,63 @@
+<div class="container main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Simular de rentabilidade</h2>
+        <br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+        <div class="painel">
+          <div class="c1" >
+            <form>
+              <div class="form-group">
+                <label for="valorInvestido">Valor da aplicação</label>
+                <input type="number" class="form-control" id="valorInvestido" placeholder="Valor Aplicacao" (keyup)='keyUpAplicacao($event)'>
+              </div>
+              <div class="form-group">
+                <label for="prazoMeses">Prazo Meses</label>
+                <input type="number" class="form-control" id="prazoMeses" placeholder="Prazo" (keyup)='keyUpPrazo($event)'>
+              </div>
+              <br>
+            <button type="submit" class="btnCalcular" (click)="CalcularCdb()">Simular investimento</button>
+           </form>
+          </div>
+
+          <div class="c2">
+            @if(calculoResponse == null){
+              <div class="empty-output">
+                <img id="iconArrow" src="/assets/icons/chart-arrow.svg" alt="">
+                <h3>Veja quanto seu patrimônio pode render</h3>
+                <p>Informe os valores ao lado para simular</p>
+              </div>
+            }@else{
+              <div class="output">
+                <h3>Em <strong>{{ calculoResponse.prazoMeses }} meses </strong>você teria:</h3>
+                <h2 style="margin-bottom: -18px;">R$&nbsp;{{ calculoResponse.valorTotalBruto }}</h2>
+                <p class="P-sc-1a057972-0 kpKPcu total-gross">Valor total bruto</p>
+                <div class="comparison">
+                  <p class="P-sc-1a057972-0 kpKPcu">Total investido: <span>R$&nbsp;{{ calculoResponse.valorInvestido }}</span></p>
+                  <p class="P-sc-1a057972-0 kpKPcu">Rendimento bruto: <span>R$&nbsp;{{ calculoResponse.rendimentoBruto }}</span></p>
+                  <p class="P-sc-1a057972-0 kpKPcu gross">Rendimento líquido: <span>R$&nbsp;{{ calculoResponse.rendimentoLiquido }}</span></p>
+                </div>
+              </div>
+            }
+          </div>
+       </div>
+
+ <ng-template #alert let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Atenção! </h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-alert">
+    <h6 style="color:red; padding-left: 11px;">O valor investido deve ser positivo e o prazo deve ser maior que 1 mês.</h6>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fechar</button>
+  </div>
+</ng-template>

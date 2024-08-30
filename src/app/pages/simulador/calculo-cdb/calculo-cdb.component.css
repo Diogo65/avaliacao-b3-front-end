@@ -1,0 +1,101 @@
+.container {
+  padding: 2rem 0rem 2rem 7rem;
+}
+
+body {
+	background:#FAF3EC;
+   font-family: 'Roboto';
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #748194;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #748194;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #748194;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #748194;
+}
+.painel{
+  position: relative;
+	width: auto;
+	height:auto;
+	top: calc(50% - 240px);
+	/* left: calc(40% - 160px); */
+   border-radius:15px 15px 15px 15px;
+}
+.c1{
+  padding-right: 100px;
+   background-color:white;
+   height:500px;
+   display:inline-block;
+   border-radius:15px 15px 15px 15px;
+}
+
+.c2{
+   background-color:#f4f5f7;
+   width: 543px;
+   height:500px;
+   border-radius:15px;
+   position:absolute;
+   display: inline-grid;
+}
+
+.btnCalcular{
+   font-weight: bold;
+   width: 230px;
+   height: 45px;
+   padding: 6px 15px;
+   border-radius: 5px;
+   outline: none;
+   border: none;
+   background: #00b0e6;
+   color: white;
+   font-size: 14px;
+}
+
+.empty-output{
+  margin-left: 17px;
+  margin-right: 17px;
+  text-align: center;
+  margin-top: 155px;
+}
+
+.output{
+  text-align: left;
+  padding: 66px;
+  position: relative;
+  animation: 2s linear 0s 1 normal none running jBcSpD;
+  display: block;
+  color: rgb(73, 73, 92);
+}
+
+.output h2 {
+  font-weight: 700;
+  color: #00b0e6;
+  font-size: 2.8rem;
+  line-height: 6.2rem;
+  max-width: 378px;
+}
+
+.comparison{
+  margin-top: 42px;
+}
+
+p.P-sc-1a057972-0.kpKPcu {
+  margin-bottom: 5px;
+}
+
+.output .comparison .gross span {
+  color: rgb(0, 200, 152);
+}
+
+.output .comparison span {
+  font-weight: 500;
+}
+
+#iconArrow{
+  margin-bottom: 31px;
+}
